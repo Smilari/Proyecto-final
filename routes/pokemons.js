@@ -156,7 +156,7 @@ var pokemons =
   {"name":"mewtwo","url":"https://pokeapi.co/api/v2/pokemon/150/", "id": "150"},
   {"name":"mew","url":"https://pokeapi.co/api/v2/pokemon/151/", "id": "151"}]
 
-  
+
 router.get('/', function(req, res, next) {
   res.send({
     status: true,
@@ -167,7 +167,7 @@ router.get('/', function(req, res, next) {
 
 router.delete('/:key', function(req, res, next) {
   pokemons = pokemons.filter(function(pokemons){
-    return pokemons.name != req.params.key
+    return pokemons.id != req.params.key
   });
 
   res.send({
