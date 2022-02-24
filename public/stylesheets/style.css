@@ -1,8 +1,25 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-a {
-  color: #00B7FF;
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+#caja-buscador{
+margin-bottom: 25px;
+}
+
+p.card-text{
+  font-weight: bold;
+}
+
+p#pokemon-id{
+  color: rgb(168, 29, 11);
 }

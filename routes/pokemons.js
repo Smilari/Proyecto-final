@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-
+//* Contenedor de pokemons
 var pokemons = 
 [
   {"name":"bulbasaur","url":"https://pokeapi.co/api/v2/pokemon/1/", "id":"1"},
@@ -156,7 +156,7 @@ var pokemons =
   {"name":"mewtwo","url":"https://pokeapi.co/api/v2/pokemon/150/", "id": "150"},
   {"name":"mew","url":"https://pokeapi.co/api/v2/pokemon/151/", "id": "151"}]
 
-
+//* Obtiene los pokemons del servidor
 router.get('/', function(req, res, next) {
   res.send({
     status: true,
@@ -165,6 +165,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
+//* Borrar pokemons en el servidor
 router.delete('/:key', function(req, res, next) {
   pokemons = pokemons.filter(function(pokemons){
     return pokemons.id != req.params.key
@@ -173,7 +174,6 @@ router.delete('/:key', function(req, res, next) {
   res.send({
     status: true,
     response: pokemons
-
   });
 });
 
