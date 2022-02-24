@@ -12,14 +12,14 @@
   }
 }
 
-#caja-buscador{
-margin-bottom: 25px;
+#caja-buscador {
+  margin-bottom: 25px;
 }
 
-p.card-text{
+p.card-text {
   font-weight: bold;
 }
 
-p#pokemon-id{
+p#pokemon-id {
   color: rgb(168, 29, 11);
 }

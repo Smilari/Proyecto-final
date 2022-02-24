@@ -94,12 +94,46 @@
           <a href="#">Back to top</a>
     </footer> 
     
+    <!-- Modal -->
+    <div class="modal fade" id="editarPokemon" tabindex="-1" role="dialog" aria-labelledby="editarPokemonLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar pokemon</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="formEditarPokemon">
+              <input type="hidden" class="form-control" id="idOculto">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nameEdit">
+                <small class="form-text text-muted">Nombre del pokemon</small>
+              </div>
+              <div class="form-group">
+                <label for="nombre">URL</label>
+                <input type="url" class="form-control" id="urlEdit">
+                <small class="form-text text-muted">URL del pokemon</small>
+              </div>
+
+           </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <script>
       // Instanciando las variables a usar
       var pokemonsAux = [];
       var pokemonsBuscados = [];
 
-      // Funcion para crear un template del contenedor de los pokemons
+      // Funcion que crea un template del contenedor de los pokemons
       function crearContainerPokemons(pokemons){
         $("#contenedorPokemons").append(
             ' <div class="card col-6 col-sm-4 col-md-3 col-lg-2 shadow-sm>' +
@@ -109,13 +143,51 @@
             '     <div class="d-flex justify-content-center align-items-center">' +
             '         <div class="btn-group">' +
             '           <button type="button" onclick="deletePokemon('+pokemons.id+')" class="btn delete btn-sm btn-outline-secondary">Delete</button>' +
-            '           <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>' +
+            '           <button type="button" onclick="editarPokemon('+pokemons.id+')" class="btn btn-sm btn-outline-secondary">Edit</button>' +
             '         </div>' +
             '     </div>' +
             '   </div>' +
             ' </div>' +
             '</div>');  
-      }
+      };
+
+      // Funcion para editar pokemon ya existentes
+      function editarPokemon(id){
+        $.ajax({
+          url: 'http://localhost:3000/pokemons/'+id,
+          type: 'GET',
+          success: function(result) {
+            if(result.response.id){
+              $("#idOculto").val(id);
+              $("#nameEdit").val(result.response.name);
+              $("#urlEdit").val(result.response.url);
+              $("#editarPokemon").modal("show");
+            }else{
+              alert("Error: No cargo correctamente");
+            }
+          }
+        })
+      };
+
+      // Cuando el formulario se envia, se genera un evento para enviar los datos al servidor
+      $("#formEditarPokemon").on('submit', function(event) {
+        event.preventDefault();
+        id = $("#idOculto").val();
+        $.ajax({
+          url: 'http://localhost:3000/pokemons/' +id,
+          type: 'PUT',
+          data: {
+            name: $("#nameEdit").val().toLowerCase(),
+            url: $("#urlEdit").val()
+          },
+          success: function(result) {
+            $("#editarPokemon").modal("hide");
+            alert("Se modifico el pokemon");
+            location.reload();
+          }
+        });
+      });
+
 
 
       // Funcion para borrar pokemons
@@ -126,8 +198,8 @@
           success: function(result) {
           location.reload();
           }
-        });
-      }
+        })
+      };
 
       // Busqueda de texto y template para colocar todos los pokemons por ID en un container por separado
       $(document).ready(function(){ //.ready para saber si la pagina cargo correctamente
@@ -139,7 +211,6 @@
           pokemonsBuscados.forEach(function(pokemons){
               crearContainerPokemons(pokemons);
             })
-
         });
 
         $.get("http://localhost:3000/pokemons/", function(data){
