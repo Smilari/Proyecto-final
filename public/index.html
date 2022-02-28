@@ -8,7 +8,7 @@
   <title>Pokemons of Johto</title>
 
   <link rel="stylesheet" href="stylesheets/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script> 
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -18,211 +18,214 @@
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-  </script>
+    </script>
 
-<meta name="theme-color" content="#7952b3">
-  </head>
-  <body>
-    
-    <header>
-      <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white"></h4>
-              <p class="text-muted"></p>
-            </div>
-            <div class="col-sm-4 offset-md-1 py-4">
-              <h4 class="text-white">Contact</h4>
-              <ul class="list-unstyled">
-                <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                <li><a href="#" class="text-white">Like on Facebook</a></li>
-                <li><a href="#" class="text-white">Email me</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
-              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2"
-              viewBox="0 0 24 24">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-              <circle cx="12" cy="13" r="4" /></svg>
-            <strong>Album</strong>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
-            aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </div>
-      </header>
+  <meta name="theme-color" content="#7952b3">
+</head>
 
+<body>
 
-    <main>
-    
-      <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Pokemons of Johto: 151 pokemons</h1>
-          </div>
-        </div>
-      </section>
-
-      <!-- Container del buscador  -->
-      <div class="container" id="caja-buscador">
-        <div class="row d-flex justify-content-center">
-          <div  class="col-6 col-sm-5 col-md-4 col-lg-3">
-            <input type="text" placeholder="Buscar pokemon" class="form-control" id="buscador">
-          </div>
-        </div>
-      </div>
-
-
-      <div class="album container py-5 col-12 bg-light" >
-        <div class="row" id="contenedorPokemons"></div>
-      </div>
-    
-    </main>
-    
-    <footer class="text-muted py-5">
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
       <div class="container">
-        <p class="float-end mb-1">
-          <a href="#">Back to top</a>
-    </footer> 
-    
-    <!-- Modal -->
-    <div class="modal fade" id="editarPokemon" tabindex="-1" role="dialog" aria-labelledby="editarPokemonLabel"
-      aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Editar pokemon</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white"></h4>
+            <p class="text-muted"></p>
           </div>
-          <div class="modal-body">
-            <form id="formEditarPokemon">
-              <input type="hidden" class="form-control" id="idOculto">
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nameEdit">
-                <small class="form-text text-muted">Nombre del pokemon</small>
-              </div>
-              <div class="form-group">
-                <label for="nombre">URL</label>
-                <input type="url" class="form-control" id="urlEdit">
-                <small class="form-text text-muted">URL del pokemon</small>
-              </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2"
+            viewBox="0 0 24 24">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+            <circle cx="12" cy="13" r="4" />
+          </svg>
+          <strong>Album</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-           </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
+
+  <main>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Pokemons of Johto: 151 pokemons</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Container del buscador  -->
+    <div class="container" id="caja-buscador">
+      <div class="row d-flex justify-content-center">
+        <div class="col-6 col-sm-5 col-md-4 col-lg-3">
+          <input type="text" placeholder="Buscar pokemon" class="form-control" id="buscador">
         </div>
       </div>
     </div>
 
 
-    <script>
-      // Instanciando las variables a usar
-      var pokemonsAux = [];
-      var pokemonsBuscados = [];
+    <div class="album container py-5 col-12 bg-light">
+      <div class="row" id="contenedorPokemons"></div>
+    </div>
 
-      // Funcion que crea un template del contenedor de los pokemons
-      function crearContainerPokemons(pokemons){
-        $("#contenedorPokemons").append(
-            ' <div class="card col-6 col-sm-4 col-md-3 col-lg-2 shadow-sm>' +
-            '   <svg class="bd-placeholder-img card-img-top" width="100%" height="225"></svg>' +
-            '   <div class="card-body text-center">' + 
-            '     <p class="card-text" id="pokemon-id"> #'+ pokemons.id +' <p class="card-text text-capitalize"> '+ pokemons.name +'</p></p>' +
-            '     <div class="d-flex justify-content-center align-items-center">' +
-            '         <div class="btn-group">' +
-            '           <button type="button" onclick="deletePokemon('+pokemons.id+')" class="btn delete btn-sm btn-outline-secondary">Delete</button>' +
-            '           <button type="button" onclick="editarPokemon('+pokemons.id+')" class="btn btn-sm btn-outline-secondary">Edit</button>' +
-            '         </div>' +
-            '     </div>' +
-            '   </div>' +
-            ' </div>' +
-            '</div>');  
-      };
+  </main>
 
-      // Funcion para editar pokemon ya existentes
-      function editarPokemon(id){
-        $.ajax({
-          url: 'http://localhost:3000/pokemons/'+id,
-          type: 'GET',
-          success: function(result) {
-            if(result.response.id){
-              $("#idOculto").val(id);
-              $("#nameEdit").val(result.response.name);
-              $("#urlEdit").val(result.response.url);
-              $("#editarPokemon").modal("show");
-            }else{
-              alert("Error: No cargo correctamente");
-            }
+  <footer class="text-muted py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">Back to top</a>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="editarPokemon" tabindex="-1" role="dialog" aria-labelledby="editarPokemonLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar pokemon</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="formEditarPokemon">
+            <input type="hidden" class="form-control" id="idOculto">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nameEdit">
+              <small class="form-text text-muted">Nombre del pokemon</small>
+            </div>
+            <div class="form-group">
+              <label for="nombre">URL</label>
+              <input type="url" class="form-control" id="urlEdit">
+              <small class="form-text text-muted">URL del pokemon</small>
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <script>
+    // Instanciando las variables a usar
+    var pokemonsAux = [];
+    var pokemonsBuscados = [];
+
+    // Funcion que crea un template del contenedor de los pokemons
+    function crearContainerPokemons(pokemons) {
+      $("#contenedorPokemons").append(
+        ' <div class="card col-6 col-sm-4 col-md-3 col-lg-2 shadow-sm>' +
+        '   <svg class="bd-placeholder-img card-img-top" width="100%" height="225"></svg>' +
+        '   <div class="card-body text-center">' +
+        '     <p class="card-text" id="pokemon-id"> #' + pokemons.id + ' <p class="card-text text-capitalize"> ' + pokemons.name + '</p></p>' +
+        '     <div class="d-flex justify-content-center align-items-center">' +
+        '         <div class="btn-group">' +
+        '           <button type="button" onclick="deletePokemon(' + pokemons.id + ')" class="btn delete btn-sm btn-outline-secondary">Delete</button>' +
+        '           <button type="button" onclick="editarPokemon(' + pokemons.id + ')" class="btn btn-sm btn-outline-secondary">Edit</button>' +
+        '         </div>' +
+        '     </div>' +
+        '   </div>' +
+        ' </div>' +
+        '</div>');
+    };
+
+    // Funcion para editar pokemon ya existentes
+    function editarPokemon(id) {
+      $.ajax({
+        url: 'http://localhost:3000/pokemons/' + id,
+        type: 'GET',
+        success: function (result) {
+          if (result.response.id) {
+            $("#idOculto").val(id);
+            $("#nameEdit").val(result.response.name);
+            $("#urlEdit").val(result.response.url);
+            $("#editarPokemon").modal("show");
+          } else {
+            alert("Error: No cargo correctamente");
           }
-        })
-      };
+        }
+      })
+    };
 
-      // Cuando el formulario se envia, se genera un evento para enviar los datos al servidor
-      $("#formEditarPokemon").on('submit', function(event) {
-        event.preventDefault();
-        id = $("#idOculto").val();
-        $.ajax({
-          url: 'http://localhost:3000/pokemons/' +id,
-          type: 'PUT',
-          data: {
-            name: $("#nameEdit").val().toLowerCase(),
-            url: $("#urlEdit").val()
-          },
-          success: function(result) {
-            $("#editarPokemon").modal("hide");
-            alert("Se modifico el pokemon");
-            location.reload();
-          }
+    // Cuando el formulario se envia, se genera un evento para enviar los datos al servidor
+    $("#formEditarPokemon").on('submit', function (event) {
+      event.preventDefault();
+      id = $("#idOculto").val();
+      $.ajax({
+        url: 'http://localhost:3000/pokemons/' + id,
+        type: 'PUT',
+        data: {
+          name: $("#nameEdit").val().toLowerCase(),
+          url: $("#urlEdit").val()
+        },
+        success: function (result) {
+          $("#editarPokemon").modal("hide");
+          alert("Se modifico el pokemon");
+          location.reload();
+        }
+      });
+    });
+
+
+
+    // Funcion para borrar pokemons
+    function deletePokemon(id) {
+      $.ajax({
+        url: 'http://localhost:3000/pokemons/' + id,
+        type: 'DELETE',
+        success: function (result) {
+          location.reload();
+        }
+      })
+    };
+
+    // Busqueda de texto y template para colocar todos los pokemons por ID en un container por separado
+    $(document).ready(function () { //.ready para saber si la pagina cargo correctamente
+      $("#buscador").change(function () {
+        pokemonsBuscados = pokemonsAux.filter(function (pokemons) {
+          return pokemons.name.indexOf($("#buscador").val().toLowerCase()) !== -1; // Transforma las palabras ingresadas en minuscula
         });
+        $("#contenedorPokemons").html(""); // Borra todos los personajes para dejar unicamente el/los que nosotros busquemos
+        pokemonsBuscados.forEach(function (pokemons) {
+          crearContainerPokemons(pokemons);
+        })
       });
 
+      $.get("http://localhost:3000/pokemons/", function (data) {
+        pokemonsAux = data.response;
 
-
-      // Funcion para borrar pokemons
-      function deletePokemon(id){
-        $.ajax({
-          url: 'http://localhost:3000/pokemons/' + id,
-          type: 'DELETE',
-          success: function(result) {
-          location.reload();
-          }
+        data.response.forEach(function (pokemons) {
+          crearContainerPokemons(pokemons);
         })
-      };
-
-      // Busqueda de texto y template para colocar todos los pokemons por ID en un container por separado
-      $(document).ready(function(){ //.ready para saber si la pagina cargo correctamente
-        $("#buscador").change(function(){
-          pokemonsBuscados = pokemonsAux.filter(function(pokemons){
-            return pokemons.name.indexOf($("#buscador").val().toLowerCase()) !== -1; // Transforma las palabras ingresadas en minuscula
-          });
-          $("#contenedorPokemons").html(""); // Borra todos los personajes para dejar unicamente el/los que nosotros busquemos
-          pokemonsBuscados.forEach(function(pokemons){
-              crearContainerPokemons(pokemons);
-            })
-        });
-
-        $.get("http://localhost:3000/pokemons/", function(data){
-            pokemonsAux = data.response;
-
-            data.response.forEach(function(pokemons){
-              crearContainerPokemons(pokemons);
-            })
-         })
       })
-    
-    </script>
-    
-  </body>
+    })
+
+  </script>
+
+</body>
+
 </html>
